@@ -1,0 +1,21 @@
+<%= form_for @holiday do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :celebrate %>
+    <%= f.text_field :celebrate %>
+  </p>
+  <p>
+    <%= f.submit 'Add holiday' %>
+  </p>
+<% end %>
+
+<%= @holidays.each do |holiday| %>
+<ul>
+  <li>
+    <%= holiday.name %>, <%= holiday.celebrate %>
+  </li>
+</ul>
+<% end %>
