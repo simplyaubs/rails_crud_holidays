@@ -30,6 +30,12 @@ class HolidaysController < ApplicationController
     redirect_to holidays_path
   end
 
+  def destroy
+    @holiday = Holiday.find(params[:id]).delete
+
+    redirect_to holidays_path
+  end
+
   private
   def holiday_params
     params.require(:holiday).permit(:name, :celebrate)
