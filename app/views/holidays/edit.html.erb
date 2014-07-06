@@ -8,14 +8,6 @@
     <%= f.text_field :celebrate %>
   </p>
   <p>
-    <%= f.submit 'Add holiday' %>
+    <%= f.submit 'Update holiday' %>
   </p>
-<% end %>
-
-<%= @holidays.each do |holiday| %>
-<ul>
-  <li>
-    <%= link_to "#{holiday.name}", holiday_path(holiday) %>, <%= holiday.celebrate %>
-  </li>
-</ul>
 <% end %>

@@ -15,6 +15,21 @@ class HolidaysController < ApplicationController
     end
   end
 
+  def show
+    @holiday = Holiday.find(params[:id])
+  end
+
+  def edit
+    @holiday = Holiday.find(params[:id])
+  end
+
+  def update
+    @holiday = Holiday.find(params[:id])
+    @holiday.update_attributes!(holiday_params)
+
+    redirect_to holidays_path
+  end
+
   private
   def holiday_params
     params.require(:holiday).permit(:name, :celebrate)
